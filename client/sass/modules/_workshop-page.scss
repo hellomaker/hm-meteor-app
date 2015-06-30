@@ -1,0 +1,18 @@
+header.workshop-page {
+	width: 100%;
+	height: em(400);
+
+	@include media ($large-screen) {
+		
+        &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -50px;
+        width: 100%;
+        height: em(120);
+        background: $peach;
+        @include transform(skewY(3deg));
+        }
+    }
+}

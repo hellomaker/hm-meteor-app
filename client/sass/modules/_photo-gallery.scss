@@ -1,0 +1,58 @@
+$number-of-images: 10;
+
+@mixin createBackgroundImage($image) {
+	background-image: url("../images/" + $image + ".jpg");
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
+
+
+.photo-gallery {
+	@include clearfix;
+	//position: relative;
+
+	ul {
+		-webkit-margin-before: 0;
+		-webkit-margin-after: 0;
+		-webkit-margin-start: 0px;
+		-webkit-margin-end: 0px;
+		-webkit-padding-start: 0;
+	}
+	li {
+		margin: 0;
+		display:inline-block;
+		width:33.33%;
+		height: em(120);
+		background: $pear;
+		float: left;
+		@include media ($large-screen) {
+			height: em(220);
+			width:20%;
+		}
+
+	}
+	
+	li:last-of-type {
+		display: none;
+		@include media ($large-screen) {
+			display: inline-block;
+		}
+	}
+
+	@for $i from 1 through $number-of-images {
+		.photo-gallery-#{$i} { @include createBackgroundImage(fg-#{$i}); }
+	}
+
+	&:after {
+		z-index: -100000;
+		content: '';
+		position: relative;
+		top: -26px;
+		width: 100%;
+		height: 60px;
+		background: $background;
+		@include transform(skewY(2deg));
+	}	
+}

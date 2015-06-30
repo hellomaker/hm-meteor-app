@@ -1,0 +1,115 @@
+nav {
+	@include clearfix;
+	height: em(60);
+	padding: em(10) em(40);
+	background-color: $peach;
+	color: $white;
+	li {
+		display: inline-block;
+		margin-right: 8px;
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	ul {
+		display: inline-block;
+		width: 50%;
+		&:last-of-type {
+			margin-top: 4px;
+			margin-right: 0;
+			float: right;
+			text-align: right;
+		}
+		&:first-of-type {
+			li {
+				float: left;
+			}
+		}
+	}
+	button {
+		padding: 0.45em 1em;
+		background: none;
+		border: 1px solid $white;
+
+		&:hover {
+			background-color: transparentize(white, .8);
+		}
+
+		span {
+			margin-right: 6px;
+	    }
+	}
+
+	img {
+		height: 40px;
+		width: auto;
+	}
+}
+
+.profile-text {
+	padding: .6em .5em;
+}
+
+.profile-email {
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+}
+
+section.profile-classes {
+	@include outer-container;
+	padding: em(40) 0 em(100) 0;
+
+	header {
+		position:relative;
+		@include span-columns(4);
+		@include shift(4);
+		text-align: center;
+		margin-bottom: em(40);
+		h2 {
+			font-size: 1.2em;
+		}
+
+		hr {
+			display: block;
+			border: none;
+			width: 50%;
+			margin: em(20) auto;
+			height: 10px;
+			background: $plum;
+		}
+	}
+}
+
+.user-classes {
+	@include span-columns(8);
+	@include shift(2);
+	h3 {
+		font-family: $sans-serif;
+		font-size: 1.2em;
+		font-weight: $font-bold;
+		text-transform: uppercase;
+		color: $apple;
+		letter-spacing: 1px;
+	}
+
+	tr {
+		height: 2.8em;
+	}
+}
+
+.profile-classes-circle {
+	display: none;
+	@include media ($large-screen) {
+		display:block;
+		position: absolute;
+		top: -90px;
+		left: 10px;
+		z-index: -30;
+		height: 320px;
+		width: 320px;
+		background: transparentize($lemon, .6);
+		border-radius: 50%;
+	}	
+}

@@ -1,0 +1,73 @@
+.community-endorsement {
+	@include outer-container;
+	margin-top: em(24);
+	height: em(300);
+
+	h3 {
+		text-align: center;
+		margin: em(30) 0 em(16) 0;
+		color: $pear;
+	}
+	q {
+		display: block;
+		position: relative;
+		margin-top: em(16);
+		padding: em(16);
+		font-family: $subheader-font-family;
+		font-style: italic;
+		font-size: 1.4em;
+	}
+
+	ul {
+		@include span-columns(8);
+		@include shift(2);
+		text-align: center;
+	}
+
+	li {
+		display: inline;
+		img {
+			width: em(50);
+			height: em(50);
+			border-radius: 50%;
+			margin-right: em(8);
+			position: relative;
+			top: 0.4em;
+		}
+	}
+
+	span[class="entypo-quote"] {
+			position: absolute;
+			left: -50px;
+			top: 6px;
+			font-size: 240%;
+			margin-right: 1em;
+			color: $light-gray;
+			font-style: normal;
+		}
+}
+
+.community-endorsement-item {
+	cursor: pointer;
+	display: inline-block;
+	padding-bottom: em(16);
+	margin: 0 em(20);
+
+	&.is-active {
+		border-bottom: 4px solid $pear;
+	}
+
+	cite {
+		display: inline-block;
+		text-align: right;
+	}
+}
+
+.community-endorsement-quote {
+	display: none;
+	float: left;
+	text-align:center;
+	width:100%;
+}
+
+

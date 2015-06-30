@@ -1,0 +1,197 @@
+<template name="home">
+
+    <!-- Hero: START -->
+    <section class="hero" id="hero-bg">
+
+        <img src="triangles.svg" alt="background animation image" id="triangles">
+
+        <div class="inner-hero">
+            <div class="hero-tagline">
+                <h1 class="logo"><span>hello</span>MAKER</h1>
+                <h2>start learning how to build out your ideas with HTML, CSS and JavaScript</h2>
+                <article class="modal">
+                    <label for="modal-1">
+                        <div class="modal-trigger"><span class="entypo-key"></span>Log in</div>
+                    </label>
+                    <a href="#workshops">Sign Up for a Free Workshop</a>
+                </article>
+            </div>
+        </div>
+    </section>
+    <!-- Hero: END -->
+
+    <!-- Starter: START -->
+    <section class="starter">
+        <h3>Dreamers to Makers</h3>
+        <hr />
+        <article>
+            <p>Do you have a great idea? Do you want to kickstart a new career? We have started these free workshops to help people learn the necessary tools to become &ldquo;makers&rdquo; and &ldquo;doers&rdquo; of the digital age.</p>
+            <p>HelloMaker Camp is a series of hands on workshops. You can start with some basic projects or choose more advanced topics.</p>
+            <p>We are a group of passionate designers and developers. All of us come from different, non-technical, backgrounds. We all learned web development ourselves and we know how hard it could be. There are a lot of great online resources, but sometimes all you need is an old-school class.</p>
+        </article>
+        <div class="starter-questions">
+            <p><strong>All backgrounds and skill levels are welcomed!</strong></p>
+            <p>Still have questions about helloMaker Camp? <a href="mailto:workshops@hellomaker.camp">Email Us</a></p>
+        </div>
+    </section>
+    <!-- Starter: END -->
+
+    <!-- Sign Up Section: START -->
+    <div class="sign-up-wrapper">
+        <section class="sign-up">
+            <div class="inner-sign-up">
+                <fieldset id="mc_embed_signup">
+                    <form action="//camp.us9.list-manage.com/subscribe/post?u=246206d056f2d4bf805db26a0&amp;id=e59ce32ee4" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <label for="sign-up-email">Receive updates about the upcoming workshops</label>
+                        <input name="EMAIL" class="required email" id="mce-EMAIL" type="email" autocomplete="on" placeholder="j.t.kirk@starfleet.com">
+                        <button type="submit" value="Subscribe" name="subscribe">Sign Up</button>
+                    </form>
+                </fieldset>
+                <div class="sign-up-banner"><h4><span class="entypo-paper-plane"></span><br />We are always working on new classes!</h4></div>
+            </div>
+        </section>
+    </div>
+    <!-- Sign Up Section: END -->
+
+    <!-- Benefits: START -->
+    <section class="benefits">
+    <ul class="bullets">
+        <li class="bullet three-col-bullet">
+            <div class="bullet-icon bullet-icon-1">
+                <span class="entypo-tools"></span>
+            </div>
+            <div class="bullet-content">
+                <h2>Hands On Projects</h2>
+                <p>Personal pages and business sites; you will be working on real life projects and learn skills you can use for project of your own. No long introductions or theories. We jump straight into hands on coding.</p>
+            </div>
+        </li>
+        <li class="bullet three-col-bullet">
+            <div class="bullet-icon bullet-icon-2">
+                <span class="entypo-users"></span>
+            </div>
+            <div class="bullet-content">
+                <h2>Small Groups</h2>
+                <p>We are strong believers is maximum student-instructor interaction. That is why we keep our classes very small, up to 10 people. Questions are very welcomed!</p>
+            </div>
+        </li>
+        <li class="bullet three-col-bullet">
+            <div class="bullet-icon bullet-icon-3">
+                <span class="entypo-chart-area"></span>
+            </div>
+            <div class="bullet-content">
+                <h2>The Latest Trends</h2>
+                <p>What is the biggest problem with video tutorials? They get outdated&hellip; We work in the tech industry and keep track of all the latest hotness out there. So you will learn only the latest.</p>
+            </div>
+        </li>
+    </ul>
+    </section>
+    <!-- Benefits: END -->
+
+    <!-- Workshops: START -->
+    <div class="workshops-wrapper" id="workshops">
+    <section class="workshops">
+        <h3>Workshops</h3>
+        <ul class="workshops-list">
+            {{#each events}}
+                <li>
+                    <div class="workshop-item">
+                        <img src="workshops/personal-project.png" alt="About Me Page">
+                        <span class="label-level">{{level}}</span>
+                        <div class="workshop-info">
+                            <h4>{{title}}</h4>
+                            <p>{{description}}</p>
+                            <ul>
+                                {{#each tags}}
+                                    <li>{{.}}</li>
+                                {{/each}}
+                            </ul>
+                            <p class="workshop-time"><span class="entypo-clock"></span>{{date ..}}</p>
+
+                        </div>
+                        <a href="mailto:workshops@hellomaker.camp?subject=Sign%20Up%3A%20About%20Me%20Page&body=Please%20include%20your%20name%20and%20level%20of%20proficiency%20in%20coding">Sign Up <span class="entypo-right-open"></span></a>
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </section>
+    </div>
+    <!-- Workshops: END -->
+
+    <!-- Photo Gallery: START -->
+    <section class="photo-gallery">
+        <ul>
+            <li class="photo-gallery-1"></li>
+            <li class="photo-gallery-2"></li>
+            <li class="photo-gallery-3"></li>
+            <li class="photo-gallery-4"></li>
+            <li class="photo-gallery-5"></li>
+            <li class="photo-gallery-6"></li>
+            <li class="photo-gallery-7"></li>
+            <li class="photo-gallery-8"></li>
+            <li class="photo-gallery-9"></li>
+            <li class="photo-gallery-10"></li>
+        </ul>
+    </section>
+    <!-- Photo Gallery: END -->
+
+    <!-- Quotes: Start -->
+    <section class="community-endorsement">
+    <h3>What the community says about helloMaker Camp</h3>
+
+    <ul class="community-endorsement-list">
+        <li>
+            <div class="community-endorsement-item">
+                <img src="avatars/howard_mai.jpg" alt="Howard Mai avatar">
+                <cite>Howard Mai<br />Designer</cite>
+            </div>
+            <div class="community-endorsement-quote">
+                <q><span class="entypo-quote"></span>The only thing that experience teaches us is that experience teaches us nothing.</q>
+            </div>
+        </li>
+
+        <li>
+            <div class="community-endorsement-item">
+                <img src="avatars/laura_murillo.jpg" alt="Laura Murillo avatar">
+                <cite>Laura Murillo<br />Marketer</cite>
+            </div>
+            <div class="community-endorsement-quote">
+                <q><span class="entypo-quote"></span>The brain is a wonderful organ; it starts working the moment you get up in the morning, and does not stop until you get to school.</q>
+            </div>
+        </li>
+
+        <li>
+            <div class="community-endorsement-item">
+                <img src="avatars/buttercup.jpg" alt="Buttecup avatar">
+                <cite>Buttercup<br />Dog</cite>
+            </div>
+            <div class="community-endorsement-quote">
+                <q><span class="entypo-quote"></span>Suddenly, Professor Liebowitz realizes he has come to the seminar without his duck&hellip;</q>
+            </div>
+        </li>
+
+    </ul>
+
+    </section>
+    <!-- Quotes: END -->
+
+    <!-- Signup/Signin Modal: START -->
+    <div class="modal">
+        <input class="modal-state" id="modal-1" type="checkbox" />
+        <div class="modal-window">
+            <div class="modal-inner">
+                <label class="modal-close" for="modal-1"></label>
+                <h1>Hey there!</h1>
+                <p class="modal-intro">Good to see you back! Log in if you have an account or sign up if you want to take classes with us.</p>
+              	<!-- {{#if currentUser}}
+          	        <p>You're logged in.</p>
+          	        {{> logout}}
+        		{{else}}
+          			{{> login}}
+          			{{> register}}
+        		{{/if}} -->
+                <!-- <p class="modal-content">Body text lorem ipsum dolor ipsum dolor sit sit possimus amet, consectetur adipisicing elit. Itaque, placeat, explicabo, veniam quos aperiam molestias eriam molestias molestiae suscipit ipsum enim quasi sit possimus quod atque nobis voluptas earum odit accusamus quibusdam. Body text lorem ipsum dolor ipsum dolor sit sit possimus amet.</p> -->
+            </div>
+        </div>
+    </div>
+    <!-- Signup/Signin Modal: END -->
+</template>

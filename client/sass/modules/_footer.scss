@@ -1,0 +1,51 @@
+footer {
+	width: 100%;
+	text-align: center;
+	p {
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		font-style: 1.2em;
+	}
+}
+
+.footer-1,
+.footer-2 {
+	width: 100%;
+}
+
+.footer-1 {
+	height: em(60);
+	padding: em(20);
+	background: $eggplant;
+	color: transparentize(white, 0.4);
+}
+
+.footer-2 {
+	height: em(80);
+	padding: em(16);
+	background: lighten($eggplant, 4%);
+}
+
+.social-links {
+	li {
+		display: inline-block;
+		border-radius: 50%;
+		height: 3em;
+		width: 3em;
+		margin: 0 em(8);
+		padding: em(6) em(4);
+		background: transparentize(white, 0.8);
+		a {
+			color: transparentize(white, 0.4);
+			&:hover {
+				color: transparentize(white, 0.2);
+			}
+		}
+
+
+		span {
+			text-align: center;
+			font-size: 160%;
+		}
+	}
+}

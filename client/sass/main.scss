@@ -1,0 +1,14 @@
+// IMPORTS
+@import "bourbon";
+@import "base/base";
+@import "neat";
+@import "modules/modules";
+
+
+//SITE WIDE STYLES
+html, body {
+    height: 100%;
+    min-height: 100%;
+    margin: 0;
+    z-index: 1;
+}

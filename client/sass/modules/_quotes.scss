@@ -1,0 +1,78 @@
+.quotes {
+	@include outer-container;
+	margin-top: em(60);
+}
+
+.quote {
+	$quote-gutter: 1.4em;
+	$quote-image-padding: .3em;
+	$quote-image-width: 4em;
+	$quote-color: $base-font-color;
+	$quote-background: lighten($base-accent-color, 15);
+	$quote-detail-color: transparentize($quote-color, .5);
+	$quote-image-vert-alignment: top;
+	
+	@include span-columns(6);
+	@include shift(3);
+	display: table;
+	margin-bottom: $base-spacing;
+	padding-bottom: 1em;
+	border-bottom: 1px solid transparentize($quote-color, .9);
+	
+	blockquote {
+		border-left: $accent-border;
+	}
+
+	.quote-image,
+	.quote-content {
+		display: table-cell;
+		vertical-align: $quote-image-vert-alignment;
+	}
+
+	.quote-image {
+		padding-right: $quote-gutter;
+
+		> img {
+			width: $quote-image-width;
+			height: auto;
+			border-radius: 50%;
+			background: $quote-background;
+			display: block;
+			max-width: none;
+		}
+
+		.quote-reverse-order & {
+			padding-right: 0;
+			padding-left: 10px;
+		}
+	}
+
+	.quote-content {
+		width: 100%;
+
+		h4 {
+			font-size: 1.2em;
+			margin-bottom: 0;
+		}
+
+		h5 {
+			color: $medium-gray;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-size: .7em;
+			margin-bottom: .5em;
+			font-weight: $font-bold;
+			font-family: $sans-serif;
+		}
+
+		p {
+			margin-bottom: .5em;
+		}
+
+		a {
+			float: right;
+			font-weight: $font-bold;
+			font-size: 1em;
+		}
+	}
+}

@@ -1,0 +1,60 @@
+.benefits {
+	@include outer-container;
+	position:relative;
+  margin-bottom: 3.75em;
+
+}
+
+.bullets {
+  $icon-bullet-size: 3.5em;
+	padding: em(12);
+  overflow: auto;
+  margin-bottom: $base-line-height;
+  
+  .three-col-bullet {
+    @include media($large-screen) {
+      @include span-columns(4);
+      @include omega(3n);
+    }
+  }
+
+  .bullet-icon {
+    float: left;
+    background: $pear;
+    padding: 0.3em;
+    border-radius: 50%;
+    width: $icon-bullet-size;
+    height: $icon-bullet-size;
+    text-align: center;
+
+    span {
+    	color: white;
+		font-size: 200%;
+    }
+  }
+
+  .bullet-icon-1 {
+    background: $pear;
+  }
+
+  .bullet-icon-2 {
+    background: adjust-hue($pear, -50);
+  }
+
+  .bullet-icon-3 {
+    background: adjust-hue($pear, -140);
+  }
+
+  .bullet-content {
+    margin-left: $icon-bullet-size *1.4;
+    margin-bottom: 2em;
+  }
+
+  h2 {
+    font-size: $icon-bullet-size /2.5;
+    padding-top: $icon-bullet-size /7;
+    margin-bottom: $icon-bullet-size /6;
+    border-bottom: 1px solid transparentize($base-font-color, .8);
+    display: inline-block;
+  }
+}

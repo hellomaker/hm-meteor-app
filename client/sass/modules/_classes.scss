@@ -1,0 +1,125 @@
+$background: $eggplant;
+
+.workshops-wrapper {
+	position: relative;	
+	background: $background;
+	padding: 60px;
+	padding-bottom: 10px;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 0;
+		top: -32px;
+		width: 100%;
+		height: 80px;
+		background: $background;
+		-webkit-transform: skewY(2.5deg);
+		-moz-transform: skewY(2.5deg);
+		-ms-transform: skewY(2.5deg);
+		-o-transform: skewY(2.5deg);
+		transform: skewY(2.5deg);
+	}	
+}
+
+.workshops {
+	@include outer-container;
+	margin-bottom: em(24);
+	h3 {
+		text-align: center;
+		margin: 0;
+		margin-bottom: em(24);
+		color: transparentize(white, 0.2);
+	}
+
+}
+
+.workshops-list {
+	& li {
+		@include media ($large-screen) {
+			@include span-columns(3);
+			@include omega(4n);
+		}
+	}
+}
+
+.workshop-item {
+	position: relative;
+	background: white;
+	min-height: 23.5em;
+	overflow: hidden;
+	padding-bottom: 2.4em;
+	margin-bottom: 16px;
+	img {
+		border-bottom: 4px solid $plum;
+	}
+	a {
+		@extend %button;
+				@include transition (all .2s ease-in-out);
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+				margin: 0;
+				border-radius:0;
+
+				span {
+					position:relative;
+					font-size: 120%;
+					top: 2px;
+					left: 2px;
+				}  
+	}
+}
+
+.workshop-info {
+	padding: em(8);
+	h4 {
+		font-size: 1.4em;
+	}
+
+	p {
+		margin-bottom: em(4);
+		&.workshop-time {
+			color: $medium-gray;
+			span {
+				margin-right: em(4);
+			}
+		}
+	}
+
+	li {
+		float: none;
+		display: inline-block;
+		margin-right: em(4);
+		font-weight: 700;
+		color: $pear;
+		width: auto;
+	}
+}
+.label-level {
+	position: absolute;
+	top: em(12);
+	left: em(12);
+	width: 1.8em;
+	height: 1.8em;
+	padding: 4px;
+	border-radius: 50%;
+	font-family: $serif;
+	background: $apple;
+	text-align:center;
+	color: transparentize(white, 0.2);
+	font-weight: 700;
+
+}
+
+// .disabled-anchor {
+// 	cursor: default;
+// 	background-color: $light-gray;
+// 	color: $medium-gray;
+
+// 	&:hover {
+// 		cursor: default;
+// 		background: $light-gray;
+// 		color: $medium-gray;
+// 	}
+// }

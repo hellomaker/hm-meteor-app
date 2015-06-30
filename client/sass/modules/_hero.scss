@@ -1,0 +1,251 @@
+//Keyframes
+
+@include keyframes(spin) {
+  from {
+    @include transform(rotate(0deg));
+  }
+  to {
+    @include transform(rotate(360deg));
+  }
+}
+
+//Styles
+.hero {
+	height:100%;
+    width:100%;
+    overflow: hidden;
+	@include background (linear-gradient(white 0, $lemon 100%, transparent 50%));
+
+    img {
+        display: none;
+        @include media ($large-screen) {
+            @include animation(spin 140s infinite linear);
+            display: block;
+            opacity: 0;
+            position: relative;
+            bottom: 61%;
+            left: -51%;
+        }
+    }
+}
+
+.inner-hero {
+    @include outer-container;
+    height:100%;
+
+    @include media ($large-screen) {
+        &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: -50px;
+        width: 100%;
+        height: em(120);
+        background: $peach;
+        @include transform(skewY(3deg));
+        }
+    }
+}
+
+.hero-tagline {
+    @include span-columns(12);
+    text-align: right;
+    padding: em(140) em(12);
+
+    @include media ($large-screen) {
+        width: 50%;
+        position: absolute;
+        bottom: 10%;
+        right: 10%;
+        text-align: right;
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 3.8em;
+        // span {
+        //    font-weight: $font-book; 
+        // }
+        @include media ($large-screen) {
+        font-size: 5.4em;
+        opacity: 0;
+        }
+    }
+    h2 {
+        font-size: 1.5em;
+        font-weight: $font-medium;
+        @include media ($large-screen) {
+        font-size: 1.8em;
+        opacity: 0;
+        padding-left:em(40);
+        margin-bottom: em(16);
+        }
+    }
+
+    article {
+        font-family: $subheader-font-family;
+        color: $plum;
+        opacity: 0;
+        a {
+            margin-left: 12px;
+            @extend %button;
+        }
+
+        @include media ($large-screen) {
+            padding-left:em(40);
+        }
+    }
+
+}
+
+// Modal
+// Based on code by Kasper Mikiewicz
+.modal {
+  $modal-padding: 3em;
+  $modal-background: $base-background-color;
+  $modal-close-color: $light-gray;
+  $modal-image-height: em(135);
+  $modal-image-width: $modal-image-height;
+  $modal-trigger-image-width: em(400);
+
+  label {
+    cursor: pointer;
+    margin-bottom: 0;
+    display: inline-block;
+    
+  }
+
+  label img {
+    border-radius: $modal-trigger-image-width / 2;
+    display: block;
+    max-width: $modal-trigger-image-width;
+  }
+
+  .modal-state {
+    display: none;
+  }
+
+  .modal-trigger {
+    padding: 12px 16px;
+    @extend %button;
+    background-color: $blue;
+
+    &:hover {
+        background-color: darken($blue, 15);
+    }
+    span {
+      margin-right: 6px;
+    }
+  }
+
+  .modal-window { // overlay
+    @include transition(opacity 0.25s ease);
+    @include position(fixed, 0px 0px 0px 0px);
+    background: rgba($dark-gray, .75);
+    opacity: 0;
+    padding-top: 0.6em;
+    text-align: left;
+    visibility: hidden;
+    z-index: 99999999999;
+    @include media($large-screen) {
+      padding-top: 10em;
+    }
+    .modal-bg {
+      @include position(absolute, 0px 0px 0px 0px);
+      cursor: pointer;
+    }
+  }
+  .modal-close {
+    @include position(absolute, ($modal-padding /2) ($modal-padding /2) null null);
+    @include size(1.5em);
+    background: $modal-background;
+    cursor: pointer;
+    &:after,
+    &:before {
+      @include position(absolute, 3px 3px 0 50%);
+      @include transform(rotate(45deg));
+      @include size(0.15em 1.5em);
+      background: $modal-close-color;
+      content: '';
+      display: block;
+      margin: -3px 0 0 -1px;
+    }
+    &:hover:after,
+    &:hover:before {
+      background: darken($modal-close-color, 10%);
+    }
+    &:before {
+      @include transform(rotate(-45deg));
+    }
+  }
+  .modal-inner {
+    @include transition(opacity 0.25s ease);
+    background: $modal-background;
+    border-radius: $base-border-radius;
+    margin-top: 0;
+    margin: auto;
+    max-height: 95%;
+    overflow: auto;
+    padding: $modal-padding / 2;
+    position: relative;
+    width: 95%;
+
+    @include media($medium-screen) {
+      max-height: 70%;
+      padding: $modal-padding;
+      width: 60%;
+    }
+
+    @include media($large-screen) {
+      width: 50%;
+    }
+
+    h1 {
+      color: $base-font-color;
+      margin-bottom: 0.6em;
+      text-align: left;
+      text-transform: capitalize;
+    }
+
+    .modal-intro {
+      font-weight: 800;
+    }
+
+    .modal-content {
+      @include media($medium-screen) {
+        @include columns(2 8em);
+      }
+    }
+
+    a.cta {
+      color: white;
+      display: inline-block;
+      margin-right: 0.5em;
+      margin-top: 1em;
+
+      &:last-child {
+        padding: 0 2em;
+      }
+    }
+  }
+  .modal-state:checked + .modal-window {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .modal-state:checked + .modal-window .modal-inner {
+    top: 0.5em;
+  }
+  form {
+    @include media($medium-screen) {
+        width: 48%;
+        float: left;
+        &:first-of-type {
+            margin-right: 4%;
+        }
+    }
+  }
+}
+.modal-open {
+  overflow: hidden;
+}

@@ -1,0 +1,9 @@
+{
+  "name": "hellomaker",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "bourbon": "~4.2.3",
+    "neat": "~1.7.2"
+  }
+}
