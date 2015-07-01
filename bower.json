@@ -4,6 +4,11 @@
   "private": true,
   "dependencies": {
     "bourbon": "~4.2.3",
-    "neat": "~1.7.2"
+    "neat": "~1.7.2",
+    "jquery": "1.11.2",
+    "jquery-smooth-scroll": "1.5.5"
+  },
+  "resolutions": {
+    "jquery": "1.11.2"
   }
 }

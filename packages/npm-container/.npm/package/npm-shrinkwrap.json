@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "URIjs": {
+      "version": "1.15.1"
+    },
+    "path-to-regexp": {
+      "version": "1.2.0",
+      "dependencies": {
+        "isarray": {
+          "version": "0.0.1"
+        }
+      }
+    }
+  }
+}

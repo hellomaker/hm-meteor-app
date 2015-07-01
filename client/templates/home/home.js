@@ -2,9 +2,8 @@ Template.home.helpers({
   events: function(){
     return Events.find({}, {sort: {submitted: 1}});
   },
-  date: function(){
-		var time = this.time;
-		return moment(time).calendar();
+  formatDate: function(date){
+		return moment(date).calendar();
 	}
 });
 
