@@ -1,6 +1,12 @@
+.workshop-header-inner,
+.workshop-inner {
+  @include outer-container;
+}
+.workshop-inner {
+  padding-top: 1.5em;
+}
 .workshop {
   header {
-    @include span-columns(12);
     background: $eggplant;
     position: relative;
     margin-bottom: em(20);
@@ -25,13 +31,15 @@
     }
   }
   .time {
-    @include span-columns(3 of 12);
+    @include span-columns(3);
+    margin-top: 1.5em;
     text-align: center;
     border-right: 1px solid transparentize(white, .9);
     span {
       font-family: $serif;
       font-size: 5em;
       font-weight: $font-bold;
+      line-height: 1;
     }
     em {
       display: block;
@@ -46,7 +54,7 @@
     }
   }
   .information {
-    @include span-columns(9 of 12);
+    @include span-columns(9);
     text-align: left;
   }
   h1 {
@@ -63,9 +71,21 @@
       font-style: normal;
     }
   }
-  .workshop-header-inner,
-  .workshop-inner {
-    @include outer-container;
+  label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: lighten($light-gray, 20%);
+  }
+  input[type="text"]{
+    @include transition(all, .2s, ease-in-out);
+    border-radius: 0;
+    border: none;
+    border-bottom: 2px solid $light-gray;
+    box-shadow: none;
+    padding: 0.5em 0;
+    &:focus {
+      border-bottom: 2px solid $apple;
+    }
   }
   .workshop-topics {
     @include span-columns(9);
@@ -78,6 +98,7 @@
   margin: em(20) 0;
 }
 .workshop-topic {
+  @include clearfix;
   time {
     display: block;
     color: lighten($light-gray, 20%);
