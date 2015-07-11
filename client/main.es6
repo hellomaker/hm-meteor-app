@@ -8,7 +8,6 @@ Router.did404.addListener( () => {
 
 // Define routes for the app.
 Router.add( '/workshop' );
-Router.add( '/profile' );
 
 // Kick off the router.
 Router.go( Router.url );
