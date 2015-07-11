@@ -7,9 +7,9 @@
     <script>try{Typekit.load();}catch(e){}</script>
 </head>
 <body>
-    {{> route path='/' template='home' }}
+    {{> route path='/' template='home' user='logged-out' }}
+    {{> route path='/' template='profile' user='logged-in' }}
 	{{> route path='/workshop' template='workshop' }}
-    {{> route path='/profile' template='profile' }}
 
     <!-- Footer: START -->
     <footer>

@@ -16,3 +16,5 @@ meteorhacks:npm
 npm-container
 cosmos:browserify
 grigio:babel
+accounts-ui-unstyled
+accounts-password
