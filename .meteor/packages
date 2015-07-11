@@ -5,14 +5,10 @@
 # but you can also edit it by hand.
 
 meteor-platform
-autopublish
-insecure
 fourseven:scss
 mquandalle:bower
 momentjs:moment
 meteorhacks:npm
-
-
 npm-container
 cosmos:browserify
 grigio:babel
