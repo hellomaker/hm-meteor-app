@@ -3,10 +3,6 @@ class Event {
     this._delegate = delegate;
   }
 
-  valueOf() {
-    return this._delegate.valueOf.apply( this._delegate, arguments );
-  }
-
   addListener() {
     return this._delegate.addListener.apply( this._delegate, arguments );
   }
@@ -28,11 +24,6 @@ class Delegate {
   constructor( context, hooks ) {
     this._context = context;
     this._hooks = hooks;
-
-    if ( this._hooks.valueOf ) {
-      this.valueOf = this._hooks.valueOf;
-    }
-
     this.listeners = [];
     this.event = new Event( this );
   }
@@ -138,7 +129,6 @@ function delegateForObject( context, name, initializer ) {
   var delegates = context[ delegatesKey ];
   if ( !delegates[ name ] ) {
     var hooks = initializer && initializer() || {};
-    hooks.valueOf = valueOf;
     delegates[ name ] = new Delegate( context, hooks );
   }
   return delegates[ name ];

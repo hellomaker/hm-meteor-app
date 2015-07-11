@@ -1,9 +1,9 @@
 function getUrl() {
-  return ( window.location.hash || '#/' ).substr( 1 )
+  return window.location.pathname;
 }
 
 function setUrl( url ) {
-  window.location.hash = '#' + url;
+  window.history.pushState( {}, '', url );
 }
 
 var initial = getUrl();
@@ -23,7 +23,7 @@ MeteorRouter = class {
     this._previousUrl = null;
     this._urlInProgress = null;
     this._dependency = new Tracker.Dependency();
-    $( window ).on( 'hashchange', this._location_didChange );
+    $( window ).on( 'popstate', this._location_didChange );
     this.routes = [];
     this.add( '/' );
   }
