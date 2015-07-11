@@ -2,6 +2,10 @@ function getUrl() {
   return ( window.location.hash || '#/' ).substr( 1 )
 }
 
+function setUrl( url ) {
+  window.location.hash = '#' + url;
+}
+
 var initial = getUrl();
 var bind = BindDecorator;
 var event = EventDecorator;
@@ -13,12 +17,13 @@ var event = EventDecorator;
  * @property {Function} [handler]
  */
 
-Router = class {
+MeteorRouter = class {
   constructor() {
     this._route = null;
     this._previousUrl = null;
     this._urlInProgress = null;
-    // $rootScope.$on( '$locationChangeSuccess', this._location_didChange );
+    this._dependency = new Tracker.Dependency();
+    $( window ).on( 'hashchange', this._location_didChange );
     this.routes = [];
     this.add( '/' );
   }
@@ -27,6 +32,7 @@ Router = class {
   @event didNavigate
 
   get url() {
+    this._dependency.depend();
     return getUrl();
   }
 
@@ -40,6 +46,7 @@ Router = class {
   }
 
   get route() {
+    this._dependency.depend();
     return this._route;
   }
 
@@ -55,7 +62,7 @@ Router = class {
     this.routes.push({
       path: config.path,
       parser: new RouteParser( config.path ),
-      handler: config.handler || angular.noop,
+      handler: config.handler || ( () => {} ),
       meta: config.meta || {}
     });
   }
@@ -99,8 +106,9 @@ Router = class {
         this._urlInProgress = null;
         this._route = context.route;
 
-        $rootScope.$apply( () => $location.url( context.url ) );
+        setUrl( context.url );
         this._didNavigate.raise( context );
+        this._dependency.changed();
 
         // Don't send a page view on initial page load.
         if ( context.url === initial ) {
