@@ -18,3 +18,5 @@ cosmos:browserify
 grigio:babel
 accounts-ui-unstyled
 accounts-password
+iron:router
+multiply:iron-router-progress
