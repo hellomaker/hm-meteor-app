@@ -1,10 +1,7 @@
 Template.home.helpers({
-  events: function(){
-    return Events.find({}, {sort: {submitted: 1}});
-  },
-  formatDate: function(date){
-		return moment(date).calendar();
-	}
+  workshops: function(){
+    return Workshops.find({}, {sort: {submitted: 1}});
+  }
 });
 
 Template.home.rendered = function(){

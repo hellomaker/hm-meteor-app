@@ -47,7 +47,7 @@
                         <button type="submit" value="Subscribe" name="subscribe">Sign Up</button>
                     </form>
                 </fieldset>
-                <div class="sign-up-banner"><h4><span class="entypo-paper-plane"></span><br />We are always working on new classes!</h4></div>
+                <div class="sign-up-banner"><h4><span class="entypo-paper-plane"></span><br />We are always working on new classes</h4></div>
             </div>
         </section>
     </div>
@@ -92,24 +92,9 @@
     <section class="workshops">
         <h3>Workshops</h3>
         <ul class="workshops-list">
-            {{#each events}}
+            {{#each workshops}}
                 <li>
-                    <div class="workshop-item">
-                        <img src="workshops/personal-project.png" alt="About Me Page">
-                        <span class="label-level">{{level}}</span>
-                        <div class="workshop-info">
-                            <h4>{{title}}</h4>
-                            <p>{{description}}</p>
-                            <ul>
-                                {{#each tags}}
-                                    <li>{{.}}</li>
-                                {{/each}}
-                            </ul>
-                            <p class="workshop-time"><span class="entypo-clock"></span>{{formatDate time}}</p>
-
-                        </div>
-                        <a href="mailto:workshops@hellomaker.camp?subject=Sign%20Up%3A%20About%20Me%20Page&body=Please%20include%20your%20name%20and%20level%20of%20proficiency%20in%20coding">Sign Up <span class="entypo-right-open"></span></a>
-                    </div>
+                    {{> workshop_item}}
                 </li>
             {{/each}}
         </ul>

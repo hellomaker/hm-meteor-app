@@ -1,0 +1,63 @@
+<template name="profile">
+	{{>nav}}
+		<section class="profile-classes">
+		<header>
+			<div class="profile-classes-circle">&nbsp;</div>
+			<h1 class="logo"><span>hello</span>MAKER</h1>
+				<h2>start learning how to build your ideas with HTML, CSS and JavaScript</h2>
+				<hr>
+		</header>
+		<div class="user-classes">
+			<h3>Your Workshops</h3>
+			<table>
+				<tr>
+					<th>Workshop</th>
+					<th>Time</th>
+					<th>Coming</th>
+				</tr>
+				<tr>
+					<td>Row 1, Column 1</td>
+					<td>Row 1, Column 2</td>
+					<td>Row 3, Column 3</td>
+				</tr>
+				<tr>
+					<td>Row 2, Column 1</td>
+					<td>Row 2, Column 2</td>
+					<td>Row 3, Column 3</td>
+				</tr>
+				<tr>
+					<td>Row 2, Column 1</td>
+					<td>Row 2, Column 2</td>
+					<td>Row 3, Column 3</td>
+				</tr>
+			</table>
+	</div>
+		</section>
+
+<div class="workshops-wrapper">
+	<section class="workshops">
+			<h3>More Workshops</h3>
+			<ul class="workshops-list">
+					{{#each workshops}}
+						<li>
+							{{> workshop_item}}
+						</li>
+					{{/each}}
+			</ul>
+		</section>
+</div>
+<section class="photo-gallery">
+    <ul>
+        <li class="photo-gallery-1"></li>
+        <li class="photo-gallery-2"></li>
+        <li class="photo-gallery-3"></li>
+        <li class="photo-gallery-4"></li>
+        <li class="photo-gallery-5"></li>
+        <li class="photo-gallery-6"></li>
+        <li class="photo-gallery-7"></li>
+        <li class="photo-gallery-8"></li>
+        <li class="photo-gallery-9"></li>
+        <li class="photo-gallery-10"></li>
+    </ul>
+</section>
+</template>

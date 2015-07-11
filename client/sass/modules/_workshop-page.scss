@@ -1,18 +1,129 @@
-header.workshop-page {
-	width: 100%;
-	height: em(400);
-
-	@include media ($large-screen) {
-		
-        &:before {
+.workshop {
+  header {
+    @include span-columns(12);
+    background: $eggplant;
+    position: relative;
+    margin-bottom: em(20);
+    padding-top: em(40);
+    padding-bottom: em(20);
+    padding-left: em(20);
+    padding-right: em(20);
+    color: $white;
+    @include media ($large-screen) {
+      margin-bottom: em(80);
+      &:after {
         content: '';
         position: absolute;
         left: 0;
-        top: -50px;
+        bottom: -60px;
+        z-index: -999;
         width: 100%;
         height: em(120);
-        background: $peach;
+        background: $eggplant;
         @include transform(skewY(3deg));
-        }
+      }
     }
+  }
+  .time {
+    @include span-columns(3 of 12);
+    text-align: center;
+    border-right: 1px solid transparentize(white, .9);
+    span {
+      font-family: $serif;
+      font-size: 5em;
+      font-weight: $font-bold;
+    }
+    em {
+      display: block;
+      font-style: italic;
+      font-family: $serif;
+      color: transparentize(white, .6);
+    }
+    a {
+      @extend button;
+      margin: 1em;
+      width: 80%;
+    }
+  }
+  .information {
+    @include span-columns(9 of 12);
+    text-align: left;
+  }
+  h1 {
+    font-weight: $font-medium;
+    font-size: 2.25em;
+    color: $white;
+    margin-bottom: .5em;
+  }
+  .makers {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: $font-bold;
+    em {
+      font-style: normal;
+    }
+  }
+  .workshop-header-inner,
+  .workshop-inner {
+    @include outer-container;
+  }
+  .workshop-topics {
+    @include span-columns(9);
+  }
+  .workshop-notifications {
+    @include span-columns(3);
+  }
+}
+.workshop-topics-wrapper {
+  margin: em(20) 0;
+}
+.workshop-topic {
+  time {
+    display: block;
+    color: lighten($light-gray, 20%);
+    font-weight: $font-bold;
+    span {
+      color: lighten($light-gray, 20%);
+      margin-right: 6px;
+    }
+  }
+  article {
+    display: inline-block;
+    float: right;
+    width: 87%;
+    margin: 0;
+    margin-left: 3%;
+    p {
+      margin: 0;
+    }
+    p:first-of-type {
+      font-size: 1.5em;
+      font-weight: $font-bold;
+    }
+  }
+  span {
+    color: $peach;
+  }
+  .details {
+    color: $light-gray;
+  }
+  aside {
+    display: inline-block;
+    float: left;
+    width: 10%;
+  }
+}
+button.counter {
+  background-color: white;
+  border: 1px solid $peach;
+  color: $peach;
+  &:hover,
+  &.active {
+    background-color: $peach;
+    border: 1px solid $peach;
+    color: $white;
+  }
+  i {
+    font-style: normal;
+  }
 }

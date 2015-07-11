@@ -3,7 +3,9 @@ function getUrl() {
 }
 
 function setUrl( url ) {
-  window.history.pushState( {}, '', url );
+  if ( url !== getUrl() ) {
+    window.history.pushState( {}, '', url );
+  }
 }
 
 var initial = getUrl();

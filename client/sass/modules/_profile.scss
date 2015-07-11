@@ -2,7 +2,7 @@ nav {
 	@include clearfix;
 	height: em(60);
 	padding: em(10) em(40);
-	background-color: $peach;
+	background-color: lighten($eggplant, 4%);
 	color: $white;
 	li {
 		display: inline-block;
@@ -63,10 +63,16 @@ section.profile-classes {
 
 	header {
 		position:relative;
-		@include span-columns(4);
-		@include shift(4);
+		@include span-columns(12);
 		text-align: center;
 		margin-bottom: em(40);
+		@include media($large-screen) {
+			@include span-columns(4);
+		}
+		h1 {
+			line-height: 1;
+			margin-bottom: .5em;
+		}
 		h2 {
 			font-size: 1.2em;
 		}
@@ -83,8 +89,11 @@ section.profile-classes {
 }
 
 .user-classes {
-	@include span-columns(8);
-	@include shift(2);
+	@include span-columns(12);
+	padding: 0 em(20);
+	@include media($large-screen) {
+		@include span-columns(8);
+	}
 	h3 {
 		font-family: $sans-serif;
 		font-size: 1.2em;

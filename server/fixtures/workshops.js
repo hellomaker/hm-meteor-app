@@ -1,6 +1,6 @@
 Meteor.startup(function () {
-  if (Events.find().count() === 0) {
-    Events.insert({
+  if (Workshops.find().count() === 0) {
+    Workshops.insert({
       title: 'About Me',
       description: 'We are going to build a simple About Me page with links to you social profiles and resume.',
       tags: ["HTML", "CSS"],
@@ -8,7 +8,7 @@ Meteor.startup(function () {
       level: "L1"
     });
 
-    Events.insert({
+    Workshops.insert({
       title: 'Business Page',
       description: 'We are going to build a simple About Me page with links to you social profiles and resume.',
       tags: ["HTML", "CSS", "Sass"],
@@ -16,7 +16,7 @@ Meteor.startup(function () {
       level: "L2"
     });
 
-    Events.insert({
+    Workshops.insert({
       title: 'Portfolio',
       description: 'We are going to build a simple About Me page with links to you social profiles and resume.',
       tags: ["HTML", "Sass", "jQuery"],
@@ -24,7 +24,7 @@ Meteor.startup(function () {
       level: "L3"
     });
 
-    Events.insert({
+    Workshops.insert({
       title: 'Personal Project',
       description: 'We are going to build a simple About Me page with links to you social profiles and resume.',
       tags: ["HTML", "CSS", "JavaScript"],

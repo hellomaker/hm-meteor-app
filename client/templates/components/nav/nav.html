@@ -1,0 +1,19 @@
+<template name="nav">
+	<nav>
+	{{#if currentUser}}
+	<ul>
+		<li>
+			<a href="/"><img src="logo.png" alt="" class="logo"></a>
+		</li>
+		<li>
+			<p class="profile-text profile-email">{{email}}</p>
+		</li>
+	</ul>
+	<ul>
+		<li>
+			{{>logout}}
+		</li>
+    </ul>
+    {{/if}}
+    </nav>
+</template>

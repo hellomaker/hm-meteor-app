@@ -1,0 +1,50 @@
+<template name="workshop">
+	{{>nav}}
+	<div class="workshop">
+		<header>
+			<div class="workshop-header-inner">
+				<div class="time">
+					<p>
+						<span>24</span><br>of July at <time datetime="2015-07-24 18:00">6 pm</time>
+						<em>3 days from today</em>
+						<a href="" class="register">register here (&#36;15)</a>
+					</p>
+				</div>
+				<div class="information">
+					<h1 class="title">Design Workshop: Building Blocks of UI</h1>
+					<p class="description">Join this workshop to learn the building blocks of UI design. We are going to cover some theory, but I will try to keep this workshop as practical as possible with code snippets and real world examples.</p>
+					<p>This workshop is the best fit for developers who want to learn how to build better-looking apps and designers who wish to learn how to translate their designs into code. You will get the best value out of this workshop if you know HTML and CSS. Knowledge of Sass is optional.</p>
+					<p class="makers"><em>9</em> makers are going</p>
+				</div>
+			</div>
+		</header>
+		<div class="workshop-inner">
+			<section class="workshop-topics">
+				<form action="">
+					<label for="topic">What do you want to talk about?
+						<input id="topic" name ="topic" type="text">
+					</label>
+					<label for="">Any details?
+						<textarea name="details" id="" cols="30" rows="10" placeholder="optional"></textarea>
+					</label>
+					<input type="submit">
+				</form>
+				<div class="workshop-topics-wrapper">
+					<div class="workshop-topic">
+						<aside>
+							<button class="counter"><i class="entypo-up-open"></i><br>14</button>
+						</aside>
+						<article>
+							<p><span>Bob: </span>Which CSS framework should I be using?</p>
+							<time datetime="2015-07-24 18:00"><span class="entypo-clock"></span>35 min ago</time>
+							<p class="details">Everyone is using Bootstrap, but I think it&rsquo;s ugly! What are some other good alternatives out there? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, quibusdam odio ipsa fugiat voluptatem iste, architecto, minima et corporis suscipit officia laborum labore possimus accusantium eveniet! Quae, illum libero! Modi.</p>
+						</article>
+					</div>
+				</div>
+			</section>
+			<section class="workshop-notifications">
+
+			</section>
+		</div>
+	</div>
+</template>
