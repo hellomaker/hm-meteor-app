@@ -10,13 +10,13 @@
   header {
     background: $eggplant;
     position: relative;
-    padding-top: em(40);
     padding-bottom: em(20);
     padding-left: em(20);
     padding-right: em(20);
     color: $white;
     z-index: 9999;
     @include media ($large-screen) {
+    padding-top: em(40);
       &:after {
         content: '';
         position: absolute;
@@ -31,15 +31,21 @@
     }
   }
   .time {
-    @include span-columns(3);
-    margin-top: 1.5em;
+    @include span-columns(12);
+    @include media ($large-screen) {
+      @include span-columns(3);
+      border-right: 1px solid transparentize(white, .9);
+      margin-top: 1.5em;
+    }
     text-align: center;
-    border-right: 1px solid transparentize(white, .9);
     span {
       font-family: $serif;
       font-size: 5em;
       font-weight: $font-bold;
-      line-height: 1;
+      line-height: 0;
+      @include media ($large-screen) {
+        line-height: 1;
+      }
     }
     em {
       display: block;
@@ -54,7 +60,10 @@
     }
   }
   .information {
-    @include span-columns(9);
+    @include span-columns(12);
+    @include media ($large-screen) {
+      @include span-columns(9);
+    }
     text-align: left;
   }
   h1 {
@@ -109,12 +118,13 @@
   }
   .workshop-topics,
   .workshop-notifications {
-    padding-top: 6em;
+    padding-top: 1em;
     padding-left: 1em;
     padding-right: 1em;
     @include media ($large-screen) {
       padding-bottom: 500em;
       margin-bottom: -500em;
+      padding-top: 6em;
     }
   }
   .workshop-topics {
@@ -194,10 +204,13 @@
   article {
     display: inline-block;
     float: right;
-    width: 89%;
     margin: 0;
     margin-left: 3%;
     padding-top: .5em;
+    width: 85%;
+    @include media ($large-screen) {
+      width: 89%;
+    }
     h2 {
       font-family: $sans-serif;
       font-size: em(16);
@@ -215,7 +228,10 @@
     display: inline-block;
     position: relative;
     float: left;
-    width: 8%;
+    width: 12%;
+    @include media ($large-screen) {
+      width: 8%;
+    }
     p {
       position: absolute;
       left: -2.5em;
@@ -236,6 +252,7 @@ button.counter {
   background-color: white;
   border: 1px solid $peach;
   color: $peach;
+  padding: 12px 0;
   &:hover,
   &.active {
     background-color: $peach;
