@@ -1,10 +1,6 @@
-Template.home.onCreated( function() {
-  Meteor.subscribe( 'workshops' );
-});
-
 Template.home.helpers({
-  workshops: function(){
-    return Workshops.find({}, {sort: {submitted: 1}});
+  workshops: function() {
+    return Workshops.find();
   }
 });
 

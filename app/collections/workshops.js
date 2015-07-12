@@ -1,1 +1,1 @@
-Workshops = new Mongo.Collection('workshops');
+// Workshops = new Mongo.Collection('workshops');

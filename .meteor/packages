@@ -16,3 +16,4 @@ accounts-ui-unstyled
 accounts-password
 iron:router
 multiply:iron-router-progress
+reactive-var
