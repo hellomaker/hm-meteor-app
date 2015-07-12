@@ -4,19 +4,19 @@
 }
 .workshop-inner {
   padding-top: 1.5em;
+  overflow: hidden;
 }
 .workshop {
   header {
     background: $eggplant;
     position: relative;
-    margin-bottom: em(20);
     padding-top: em(40);
     padding-bottom: em(20);
     padding-left: em(20);
     padding-right: em(20);
     color: $white;
+    z-index: 9999;
     @include media ($large-screen) {
-      margin-bottom: em(80);
       &:after {
         content: '';
         position: absolute;
@@ -71,55 +71,138 @@
       font-style: normal;
     }
   }
+  form {
+    margin-bottom: 2em;
+  }
   label {
     text-transform: uppercase;
     letter-spacing: 2px;
     color: lighten($light-gray, 20%);
+    line-height: 2;
+    
   }
-  input[type="text"]{
+  input[type="text"] {
     @include transition(all, .2s, ease-in-out);
     border-radius: 0;
     border: none;
-    border-bottom: 2px solid $light-gray;
+    border-bottom: 2px solid lighten($light-gray, 20%);
     box-shadow: none;
     padding: 0.5em 0;
+    color: $light-gray;
     &:focus {
       border-bottom: 2px solid $apple;
     }
   }
+  textarea {
+    border-radius: 0;
+    border: none;
+    background-color: $lightest-gray;
+    box-shadow: none;
+    color: $light-gray;
+    border-bottom: 2px solid lighten($light-gray, 20%);
+    margin-bottom: 0;
+    &:focus {
+      box-shadow: none;
+      background-color: lighten($lightest-gray, 2%);
+      border-bottom: 2px solid $apple;
+    }
+  }
+  .workshop-topics,
+  .workshop-notifications {
+    padding-top: 6em;
+    padding-left: 1em;
+    padding-right: 1em;
+    @include media ($large-screen) {
+      padding-bottom: 500em;
+      margin-bottom: -500em;
+    }
+  }
   .workshop-topics {
-    @include span-columns(9);
+    @include span-columns(12);
+    @include media ($large-screen) {
+      @include span-columns(9);
+    }
   }
   .workshop-notifications {
-    @include span-columns(3);
+    display: none;
+    position: relative;
+    overflow: hidden;
+    @include media ($large-screen) {
+      @include span-columns(3);
+    }
+    h3 {
+      font-family: $sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: $pear;
+      line-height: 2;
+      font-size: 1em;
+      padding-left: 1em;
+      padding-bottom: 1em;
+    }
+    a {
+      display: block;
+      padding-left: 1em;
+      color: $medium-gray;
+      &:visited {
+        color: $medium-gray;
+      }
+      &:hover {
+        color: $dark-gray;
+      }
+    }
+    li {
+      position: relative;
+      margin: 1em 0;
+    }
+    .line {
+      position: absolute;
+      width: 1px;
+      height: 200%;
+      left:6px;
+      top: -6em;
+      background: $lightest-gray;
+    }
+    .dot {
+      position: absolute;
+      height: 11px;
+      width: 11px;
+      border-radius: 50%;
+      background: $pear;
+      left: -15px;
+      top: 8%;
+    }
   }
 }
 .workshop-topics-wrapper {
   margin: em(20) 0;
 }
-.workshop-topic {
-  @include clearfix;
+.workshop-topic,
+.workshop-notifications {
   time {
     display: block;
     color: lighten($light-gray, 20%);
-    font-weight: $font-bold;
     span {
       color: lighten($light-gray, 20%);
       margin-right: 6px;
     }
   }
+}
+.workshop-topic {
+  @include clearfix;
+  margin-bottom: 1em;
   article {
     display: inline-block;
     float: right;
-    width: 87%;
+    width: 89%;
     margin: 0;
     margin-left: 3%;
-    p {
-      margin: 0;
-    }
-    p:first-of-type {
-      font-size: 1.5em;
+    padding-top: .5em;
+    h2 {
+      font-family: $sans-serif;
+      font-size: em(16);
       font-weight: $font-bold;
+      color: $medium-gray;
     }
   }
   span {
@@ -130,9 +213,24 @@
   }
   aside {
     display: inline-block;
+    position: relative;
     float: left;
-    width: 10%;
+    width: 8%;
+    p {
+      position: absolute;
+      left: -2.5em;
+      top: 30%;
+      color: lighten($light-gray, 20%);
+      font-weight: $font-bold;
+    }
+    button {
+      width: 100%;
+    }
   }
+}
+span.username {
+  color: $peach;
+  font-weight: $font-bold;
 }
 button.counter {
   background-color: white;

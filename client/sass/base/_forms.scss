@@ -30,7 +30,6 @@ textarea,
 #{$all-text-inputs},
 select[multiple=multiple] {
   box-sizing: border-box;
-  @include transition(border-color);
   background-color: white;
   border-radius: $form-border-radius;
   border: 1px solid $form-border-color;
@@ -40,6 +39,11 @@ select[multiple=multiple] {
   margin-bottom: $base-spacing / 2;
   padding: ($base-spacing / 3) ($base-spacing / 3);
   width: 100%;
+  @include transition(all .2s ease-in-out);
+  @include placeholder {
+    font-style: italic;
+    font-weight: normal;
+  }
 
   &:hover {
     border-color: $form-border-color-hover;
