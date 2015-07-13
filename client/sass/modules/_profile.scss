@@ -60,7 +60,10 @@ section.profile-classes {
 				}
 			}
 			span {
-				margin: 0 6px 0 2px;;
+				margin: 0 6px 0 0px;
+				&:not(:first-child) {
+					margin: 0 6px 0 12px;
+				}
 			}
 		}
 		&:last-child {
@@ -81,6 +84,7 @@ section.profile-classes {
 				font-size: 2.5em;
 				position: absolute;
 				top: 0;
+				font-weight: normal;
 			}
 		}
 	}
