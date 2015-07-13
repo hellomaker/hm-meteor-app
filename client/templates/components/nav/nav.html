@@ -1,19 +1,25 @@
 <template name="nav">
 	<nav>
-	{{#if currentUser}}
 	<ul>
 		<li>
 			<a href="/"><img src="logo.png" alt="" class="logo"></a>
 		</li>
+		{{#if currentUser}}
 		<li>
 			<p class="profile-text profile-email">{{email}}</p>
 		</li>
+		{{/if}}
 	</ul>
 	<ul>
 		<li>
-			{{>logout}}
+			{{#if currentUser}}
+				{{>logout}}
+			{{else}}
+				<label for="modal-1">
+					<div class="modal-trigger"><span class="entypo-key"></span>Sign Up</div>
+				</label>
+			{{/if}}
 		</li>
-    </ul>
-    {{/if}}
-    </nav>
+	</ul>
+	</nav>
 </template>

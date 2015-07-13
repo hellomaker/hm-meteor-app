@@ -1,0 +1,21 @@
+<template name="sign_log_in_modal">
+	<!-- Signup/Signin Modal: START -->
+		<div class="modal">
+			<input class="modal-state" id="modal-1" type="checkbox" />
+			<div class="modal-window">
+				<div class="modal-inner">
+					<label class="modal-close" for="modal-1"></label>
+					<h1>Hey there!</h1>
+					<!-- <p class="modal-intro">Good to see you back! Log in if you have an account or sign up if you want to take classes with us.</p> -->
+					{{#if currentUser}}
+						<p>You're logged in.</p>
+						{{> logout}}
+					{{else}}
+						{{> login}}
+						{{> register}}
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	<!-- Signup/Signin Modal: END -->
+</template>

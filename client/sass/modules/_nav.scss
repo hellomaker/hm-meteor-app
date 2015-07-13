@@ -1,0 +1,62 @@
+nav {
+	@include clearfix;
+	height: em(60);
+	padding: em(10) em(40);
+	background-color: lighten($eggplant, 4%);
+	color: $white;
+	li {
+		display: inline-block;
+		margin-right: 8px;
+		&:last-of-type {
+			margin-right: 0;
+		}
+	}
+
+	ul {
+		display: inline-block;
+		width: 50%;
+		&:last-of-type {
+			margin-top: 4px;
+			margin-right: 0;
+			float: right;
+			text-align: right;
+		}
+		&:first-of-type {
+			li {
+				float: left;
+			}
+		}
+	}
+	label {
+			@extend %button;
+			cursor: pointer;
+	}
+	button,
+	label {
+		padding: 0.45em 1em;
+		background: none;
+		border: 1px solid $white;
+
+		&:hover {
+			background-color: transparentize(white, .8);
+		}
+
+		span {
+			margin-right: 6px;
+	    }
+	}
+
+	img {
+		height: 40px;
+		width: auto;
+	}
+}
+.profile-text {
+	padding: .6em .5em;
+}
+
+.profile-email {
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 2px;
+}

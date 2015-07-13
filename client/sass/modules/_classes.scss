@@ -5,23 +5,58 @@
 }
 .workshops-wrapper-extended {
 	background: $eggplant;
-	&:before {
-		content: '';
-		position: absolute;
-		left: 0;
-		top: -32px;
-		width: 100%;
-		height: 80px;
-		background: $eggplant;
-		-webkit-transform: skewY(2.5deg);
-		-moz-transform: skewY(2.5deg);
-		-ms-transform: skewY(2.5deg);
-		-o-transform: skewY(2.5deg);
-		transform: skewY(2.5deg);
+	@include media ($large-screen) {
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: -32px;
+			width: 100%;
+			height: 80px;
+			background: $eggplant;
+			-webkit-transform: skewY(2.5deg);
+			-moz-transform: skewY(2.5deg);
+			-ms-transform: skewY(2.5deg);
+			-o-transform: skewY(2.5deg);
+			transform: skewY(2.5deg);
+			z-index: -9999;
+		}
 	}
 }
 .workshops-wrapper-compact {
-	background: lighten($eggplant, 10%);
+	background: lighten($eggplant, 65%);
+	margin-bottom: em(60);
+	@include media ($large-screen) {
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			bottom: -32px;
+			width: 100%;
+			height: 60px;
+			background: lighten($eggplant, 65%);
+			-webkit-transform: skewY(-1.25deg);
+			-moz-transform: skewY(-1.25deg);
+			-ms-transform: skewY(-1.25deg);
+			-o-transform: skewY(-1.25deg);
+			transform: skewY(-1.25deg);
+			z-index: -9999;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: -32px;
+			width: 100%;
+			height: 80px;
+			background: lighten($eggplant, 65%);
+			-webkit-transform: skewY(1.75deg);
+			-moz-transform: skewY(1.75deg);
+			-ms-transform: skewY(1.75deg);
+			-o-transform: skewY(1.75deg);
+			transform: skewY(1.75deg);
+		}
+	}
 }
 
 .workshops {

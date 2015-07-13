@@ -1,0 +1,19 @@
+.feedback {
+	@include outer-container;
+	h3, p {
+		text-align: center;
+	}
+	p {
+		margin-bottom: 2em;
+	}
+}
+
+.feedback-inner {
+	@include span-columns(12);
+	padding: 0 1em;
+	@include media ($large-screen) {
+		@include span-columns(6);
+		@include shift(3);
+		padding: em(60) 0;
+	}
+}

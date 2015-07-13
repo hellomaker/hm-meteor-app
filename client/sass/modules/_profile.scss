@@ -1,62 +1,3 @@
-nav {
-	@include clearfix;
-	height: em(60);
-	padding: em(10) em(40);
-	background-color: lighten($eggplant, 4%);
-	color: $white;
-	li {
-		display: inline-block;
-		margin-right: 8px;
-		&:last-of-type {
-			margin-right: 0;
-		}
-	}
-
-	ul {
-		display: inline-block;
-		width: 50%;
-		&:last-of-type {
-			margin-top: 4px;
-			margin-right: 0;
-			float: right;
-			text-align: right;
-		}
-		&:first-of-type {
-			li {
-				float: left;
-			}
-		}
-	}
-	button {
-		padding: 0.45em 1em;
-		background: none;
-		border: 1px solid $white;
-
-		&:hover {
-			background-color: transparentize(white, .8);
-		}
-
-		span {
-			margin-right: 6px;
-	    }
-	}
-
-	img {
-		height: 40px;
-		width: auto;
-	}
-}
-
-.profile-text {
-	padding: .6em .5em;
-}
-
-.profile-email {
-	text-transform: uppercase;
-	font-weight: bold;
-	letter-spacing: 2px;
-}
-
 section.profile-classes {
 	@include outer-container;
 	padding: em(40) 0 em(100) 0;
@@ -105,6 +46,43 @@ section.profile-classes {
 
 	tr {
 		height: 2.8em;
+	}
+	td {
+		&:first-child {
+			width: 75%;
+			p {
+				margin-bottom: 0;
+				&:first-child {
+					font-weight: $font-bold;
+				}
+				&:last-child {
+					color: lighten($light-gray, 20%);
+				}
+			}
+			span {
+				margin: 0 6px 0 2px;;
+			}
+		}
+		&:last-child {
+			vertical-align: middle;
+			a {
+				background: #E0393E;
+				position: relative;
+				padding: 16px 80px 16px 16px;
+				float: right;
+				&:hover,
+				&:active,
+				&:focus {
+					background: darken(#E0393E, 10%);
+				}
+			}
+			span {
+				margin-left: .25em;
+				font-size: 2.5em;
+				position: absolute;
+				top: 0;
+			}
+		}
 	}
 }
 

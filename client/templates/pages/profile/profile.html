@@ -11,24 +11,25 @@
 			<h3>Your Workshops</h3>
 			<table>
 				<tr>
-					<th>Workshop</th>
-					<th>Time</th>
-					<th>Coming</th>
+					<td>
+						<p><a href="/workshop">Design Workshop: Building Blocks of UI</a></p>
+						<p><time datetime="2015-07-24 18:00"><span class="entypo-clock"></span>2 days from now</time>&emsp;&bull;&emsp;<span class="entypo-pencil"></span>18 topics posted&emsp;&bull;&emsp;<span class="entypo-thumbs-up"></span> 24 upvotes</p>
+					</td>
+					<td><a href="" class="button">Register on <span class="zocial-meetup"></span></a></td>
 				</tr>
 				<tr>
-					<td>Row 1, Column 1</td>
-					<td>Row 1, Column 2</td>
-					<td>Row 3, Column 3</td>
+					<td>
+						<p><a href="/workshop">Intro Class: Build Your First Website</a></p>
+						<p><time datetime="2015-07-24 18:00"><span class="entypo-clock"></span>yestreday</time>&emsp;&bull;&emsp;<span class="entypo-pencil"></span>18 topics posted&emsp;&bull;&emsp;<span class="entypo-thumbs-up"></span> 24 upvotes</p>
+					</td>
+					<td><a href="" class="button">Register on <span class="zocial-meetup"></span></a></td>
 				</tr>
 				<tr>
-					<td>Row 2, Column 1</td>
-					<td>Row 2, Column 2</td>
-					<td>Row 3, Column 3</td>
-				</tr>
-				<tr>
-					<td>Row 2, Column 1</td>
-					<td>Row 2, Column 2</td>
-					<td>Row 3, Column 3</td>
+					<td>
+						<p><a href="/workshop">Deep Dive: CSS Architecture</a></p>
+						<p><time datetime="2015-07-24 18:00"><span class="entypo-clock"></span>8 days ago</time>&emsp;&bull;&emsp;<span class="entypo-pencil"></span>18 topics posted&emsp;&bull;&emsp;<span class="entypo-thumbs-up"></span> 24 upvotes</p>
+					</td>
+					<td><a href="" class="button">Register on <span class="zocial-meetup"></span></a></td>
 				</tr>
 			</table>
 	</div>
@@ -36,7 +37,6 @@
 
 <div class="workshops-wrapper workshops-wrapper-compact">
 	<section class="workshops">
-			<h3>More Workshops</h3>
 			<ul class="workshops-list">
 					{{#each workshops}}
 						<li>
@@ -46,18 +46,21 @@
 			</ul>
 		</section>
 </div>
-<section class="photo-gallery">
-    <ul>
-        <li class="photo-gallery-1"></li>
-        <li class="photo-gallery-2"></li>
-        <li class="photo-gallery-3"></li>
-        <li class="photo-gallery-4"></li>
-        <li class="photo-gallery-5"></li>
-        <li class="photo-gallery-6"></li>
-        <li class="photo-gallery-7"></li>
-        <li class="photo-gallery-8"></li>
-        <li class="photo-gallery-9"></li>
-        <li class="photo-gallery-10"></li>
-    </ul>
+<section class="feedback">
+	<div class="feedback-inner">
+		<h3>We would love your feedback</h3>
+		<p>Send us your questions, suggestions or concerns. Have an idea for a workshop? Want to be a guest speaker? Drop us a line!</p>
+		<form action="">
+			<label for=""> Name
+				<input type="text">
+			</label>
+			<label for=""> Email
+				<input type="text">
+			</label>
+			<label for=""> Message
+				<textarea name="" id="" cols="30" rows="4"></textarea>
+			</label>
+		</form>
+	</div>
 </section>
 </template>
